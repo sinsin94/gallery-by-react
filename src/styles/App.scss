@@ -32,6 +32,51 @@ html,body {
   height: 100%;
   overflow: hidden;
   background-color: #ddd;
+  /*需要对图片的位置进行计算--求极限(聚焦图片左上顶点)
+  **左分区
+  *  x>0-imgFigure.width/2
+  *  x<stage.width/2 - imgFigure.width/2*3
+  *  y>0 - imgFigure.height/2
+  *  y<stage.height - imgFigure.height/2
+  **右分区
+  * x>stage.width/2 + imgFigure.width/2
+  * x<stage.width/2 - imgFigure.width/2
+  * y>0 - imgFigure.height/2
+  * y<stage.height - imgFigure.height/2
+  **上分区
+  * x>stage.width/2 + imgFigure.width
+  * x<stage.width/2
+  * y>0 - imgFigure.height/2
+  * y<stage.height／2 - imgFigure.height/2*3
+  */
+
+  @at-root {
+    .img-figure{
+
+      position: absolute;
+      width: 320px;
+      height: 360px;
+      margin: 0;
+      padding: 40px;
+
+      background-color: #fff;
+
+      box-sizing: border-box;
+    }
+    figcaption{
+
+      text-align: center;
+
+      .img-title{
+        margin: 20px 0 0 0;
+        color: #a7a0a2;
+        font-size: 16px;
+
+      }
+    }
+
+
+  }
 
 
 }
